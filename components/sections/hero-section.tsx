@@ -50,7 +50,7 @@ export function HeroSection() {
               Somos <strong>Maikol, Zadkiel y Gino</strong>, estudiantes de
               Ingeniería en Informática en la Universidad Centroccidental
               Lisandro Alvarado. Este portafolio reúne nuestra revisión de la
-              literatura sobre hábitos, el diseño de una encuesta de campo en el
+              literatura sobre hábitos, una encuesta de campo aplicada en el
               Decanato de Ciencias y Tecnología y una lectura honesta de nuestro
               propio proceso de aprendizaje.
             </p>

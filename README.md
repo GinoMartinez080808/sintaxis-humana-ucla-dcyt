@@ -9,12 +9,17 @@ campo en el DCyT y un registro honesto del proceso de aprendizaje del equipo.
 
 ## Stack
 
-- **Next.js 15** con App Router y componentes de servidor.
+- **Next.js 16** con App Router y componentes de servidor.
 - **React 19** y **TypeScript** en modo estricto.
 - **CSS nativo**: custom properties, Grid, Flexbox, container queries y
   animaciones ligadas al scroll (`animation-timeline: scroll()` y `view()`).
 - Tipografías con `next/font` (Instrument Serif, Inter, JetBrains Mono).
 - Sin librerías de animación ni dependencias de interfaz externas.
+
+## Requisitos
+
+- Node.js 22.18 o superior. Los tests ejecutan el módulo TypeScript con el
+  *type stripping* nativo de Node.
 
 ## Comandos
 
@@ -25,6 +30,7 @@ npm run build      # build de producción
 npm run start      # servir el build
 npm run typecheck  # validación de TypeScript
 npm run lint       # ESLint
+npm test           # validación del conjunto de datos de la encuesta
 npm run assets:generate  # regenera iconos y la imagen Open Graph desde el escudo
 ```
 
@@ -40,11 +46,13 @@ app/
 components/
   layout/           # encabezado, pie, progreso de lectura
   sections/         # hero, equipo, hábitos, investigación, resultados, avance
-  media/            # tarjeta QR de la encuesta
+  media/            # panel de acceso a la encuesta
+  survey/           # gráficos y métricas del cuestionario
   ui/               # encabezado de sección
 lib/content/        # contenido tipado en español
 public/images/      # escudo institucional y Open Graph
 scripts/            # generación de activos con sharp
+tests/              # validación del conjunto de datos
 ```
 
 ## Sistema visual
@@ -86,10 +94,13 @@ Las fuentes revisadas son:
 
 ## Estado editorial
 
+La encuesta de campo se aplicó a diez estudiantes y sus resultados descriptivos
+están publicados con denominadores explícitos. La muestra no es probabilística:
+el sitio no generaliza sus hallazgos a toda la UCLA.
+
 Pendiente de material externo o de etapas posteriores:
 
-- URL definitiva de la encuesta y su código QR validado.
-- Respuestas verificadas de la muestra objetivo (10 estudiantes del DCyT).
+- Ampliar la muestra para comparar los patrones con otros grupos y carreras.
 - Reel del equipo sobre hábitos.
 - Perfiles verificados de Maikol Marquez y Zadkiel Boza.
 - Dominio final del sitio.

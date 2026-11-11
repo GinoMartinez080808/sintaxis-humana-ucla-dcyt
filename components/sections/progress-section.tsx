@@ -21,7 +21,7 @@ const NEXT_STEPS = [
   },
   {
     tag: "Encuesta",
-    text: "Validar el instrumento, recolectar respuestas y agregar los datos verificados.",
+    text: "Ampliar la muestra para comparar los patrones descriptivos con otros grupos y carreras.",
   },
   {
     tag: "Perfiles",
@@ -81,7 +81,9 @@ export function ProgressSection() {
               La lectura de Covey, Duhigg y Clear modificó nuestra forma de
               plantear el trabajo: el avance dejó de depender de una noche de
               inspiración y pasó a sostenerse en sesiones, revisiones y decisiones
-              pequeñas.
+              pequeñas. La encuesta de campo se aplicó a diez estudiantes y sus
+              resultados se publicaron por tema, con porcentajes y denominadores
+              explícitos.
             </p>
           </article>
 
@@ -90,9 +92,8 @@ export function ProgressSection() {
             <h3>Lo que no se puede simular</h3>
             <p>
               Falta el material que depende de terceros y de etapas posteriores:
-              las respuestas de la encuesta, el video del equipo y los perfiles de
-              Maikol y Zadkiel. También falta validar el instrumento y definir el
-              dominio final.
+              el video del equipo y los perfiles de Maikol y Zadkiel. También
+              falta ampliar la muestra de la encuesta y definir el dominio final.
             </p>
             <p>
               Ninguno de esos vacíos se disimula en esta versión. El siguiente

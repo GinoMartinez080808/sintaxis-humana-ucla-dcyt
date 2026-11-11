@@ -37,7 +37,15 @@ const TABS = [
 
 type TabId = (typeof TABS)[number]["id"];
 
-export function ResearchAnnexes() {
+type ResearchAnnexesProps = {
+  questionCount: number;
+  totalResponses: number;
+};
+
+export function ResearchAnnexes({
+  questionCount,
+  totalResponses,
+}: ResearchAnnexesProps) {
   const [active, setActive] = useState<TabId>("a");
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -167,12 +175,12 @@ export function ResearchAnnexes() {
         tabIndex={0}
         hidden={active !== "b"}
       >
-        <p className="annex-subtitle">Anexo B · Estructura prevista del cuestionario</p>
+        <p className="annex-subtitle">Anexo B · Instrumento aplicado</p>
         <p className="annex-lede">
-          El instrumento se organiza en cinco bloques de dimensiones. Las
-          preguntas literales se publicarán cuando el equipo cierre su
-          validación; por ahora mostramos la estructura y los criterios de
-          evaluación previstos.
+          El cuestionario aplicado consta de {questionCount} preguntas de
+          selección única, agrupadas en cuatro bloques temáticos. Cada pregunta
+          se analiza con su propio denominador de {totalResponses} respuestas;
+          el registro literal está en la sección de resultados.
         </p>
 
         <div className="instrument-grid" style={{ marginTop: "1.25rem" }}>
@@ -180,6 +188,7 @@ export function ResearchAnnexes() {
             <article className="instrument-card" key={block.code}>
               <div className="instrument-card__head">
                 <span className="instrument-card__code">{block.code}</span>
+                <span className="pill pill--documented">Aplicado</span>
               </div>
               <h4>{block.title}</h4>
               <p>{block.description}</p>
@@ -188,7 +197,6 @@ export function ResearchAnnexes() {
                   <li key={dimension}>{dimension}</li>
                 ))}
               </ul>
-              <span className="pending-tag">Pendiente de validación</span>
             </article>
           ))}
         </div>
@@ -198,10 +206,10 @@ export function ResearchAnnexes() {
             !
           </span>
           <div>
-            <strong>Estado del instrumento</strong>
-            No presentamos preguntas como aplicadas si aún no lo fueron. La
-            versión final del cuestionario se adjuntará a este anexo cuando esté
-            aprobada por el equipo.
+            <strong>Instrumento aplicado</strong>
+            Las preguntas de este anexo son las que sustentan los resultados de
+            la sección de investigación. No se presentan preguntas como
+            aplicadas si no lo fueron.
           </div>
         </div>
       </div>
@@ -251,14 +259,16 @@ export function ResearchAnnexes() {
           <div className="prose">
             <p className="annex-subtitle">Anexo D · Resultados y hallazgos</p>
             <p>
-              Al cierre de esta versión, la encuesta no cuenta con respuestas
-              verificadas. Este anexo reserva el lugar para los resultados y
-              explica cómo se publicarán, sin anticipar hallazgos.
+              La encuesta registra {totalResponses} respuestas para cada una de
+              las {questionCount} preguntas. Los resultados se presentan por
+              tema en la sección de investigación de campo, con porcentajes y
+              denominadores explícitos.
             </p>
             <p>
-              Cuando existan datos, se presentarán por dimensión, con el número de
-              respuestas válidas como denominador y una interpretación breve. Los
-              gráficos solo se construirán con datos reales.
+              Este anexo conserva los criterios de publicación; el registro
+              literal de las preguntas está en la sección de resultados. No se
+              anticipan hallazgos que los datos no sostengan ni se cruzan
+              respuestas individuales.
             </p>
             <p className="annex-subtitle" style={{ marginTop: "1.75rem" }}>
               Criterios de publicación
@@ -270,7 +280,7 @@ export function ResearchAnnexes() {
             </ul>
             <div className="annex-actions">
               <a className="button button--primary" href="#resultados">
-                Ver el estado de resultados
+                Revisar los límites del estudio
                 <span className="button__arrow" aria-hidden="true">
                   →
                 </span>
@@ -282,9 +292,9 @@ export function ResearchAnnexes() {
             <div className="annex-side__card">
               <h4>Denominador</h4>
               <p>
-                La muestra objetivo es de diez estudiantes. Si se alcanzan diez
-                respuestas válidas, cada respuesta representará diez puntos
-                porcentuales del total.
+                Cada respuesta equivale a {100 / totalResponses} puntos
+                porcentuales del total de su pregunta. No se suman respuestas
+                entre preguntas ni se cruzan por persona.
               </p>
             </div>
             <div className="annex-side__card">

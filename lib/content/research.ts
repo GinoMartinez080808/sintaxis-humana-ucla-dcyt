@@ -1,13 +1,11 @@
 export const RESEARCH = {
-  targetSample: 10,
-  verifiedResponses: 0,
   population: "Estudiantes de Ingeniería en Informática del Decanato de Ciencias y Tecnología (DCyT), UCLA.",
   topic:
-    "Hábitos de estudio, uso del teléfono y principios de organización en estudiantes universitarios.",
+    "Hábitos de estudio, concentración, aprendizaje colaborativo y descanso en estudiantes de Ingeniería en Informática.",
   purpose:
-    "Indagar cómo se organizan los estudiantes del DCyT para estudiar, qué papel ocupa el teléfono en sus rutinas y qué principios de responsabilidad personal reconocen en su propia práctica académica.",
+    "Describir cómo los estudiantes organizan su tiempo, responden a las distracciones, se relacionan con sus compañeros y gestionan su descanso.",
   contribution:
-    "Producir evidencia descriptiva, recolectada de forma anónima, que permita conversar sobre hábitos académicos con datos del propio contexto y no solo con impresiones generales.",
+    "Aportar evidencia descriptiva y agregada sobre hábitos académicos dentro del contexto inmediato del DCyT.",
 } as const;
 
 export type InstrumentBlock = {
@@ -19,55 +17,36 @@ export type InstrumentBlock = {
 
 export const INSTRUMENT_BLOCKS: InstrumentBlock[] = [
   {
-    code: "B1",
-    title: "Datos académicos anónimos",
+    code: "T1",
+    title: "Perfil del estudiante",
     description:
-      "Información agregada para describir la muestra sin identificar a ninguna persona.",
-    dimensions: ["Semestre que cursa", "Carrera", "Modalidad de estudio predominante"],
+      "Datos generales para situar la muestra sin identificar a las personas.",
+    dimensions: ["Rango de edad", "Carrera"],
   },
   {
-    code: "B2",
-    title: "Hábitos de estudio",
+    code: "T2",
+    title: "Organización y concentración",
     description:
-      "Frecuencia y condiciones en las que se estudia durante la semana.",
+      "Planificación de entregas, respuesta a distracciones y revisión del progreso.",
     dimensions: [
-      "Días de estudio por semana",
-      "Duración habitual de una sesión",
-      "Lugar donde estudia con mayor frecuencia",
+      "Gestión del tiempo",
+      "Respuesta a distracciones",
+      "Autoevaluación académica",
     ],
   },
   {
-    code: "B3",
-    title: "Uso del teléfono",
+    code: "T3",
+    title: "Aprendizaje colaborativo",
     description:
-      "Presencia del dispositivo durante el estudio y su relación con las interrupciones.",
-    dimensions: [
-      "Frecuencia de revisión durante el estudio",
-      "Motivo principal de la interrupción",
-      "Estrategias de control del dispositivo",
-    ],
+      "Preferencias de estudio y apertura a la corrección de compañeros.",
+    dimensions: ["Compañía al estudiar", "Escucha de correcciones"],
   },
   {
-    code: "B4",
-    title: "Planificación y constancia",
+    code: "T4",
+    title: "Autogestión y descanso",
     description:
-      "Formas de organizar entregas, prioridades y continuidad del trabajo académico.",
-    dimensions: [
-      "Uso de agenda o lista de tareas",
-      "Anticipación de entregas",
-      "Continuidad entre sesiones",
-    ],
-  },
-  {
-    code: "B5",
-    title: "Principios personales",
-    description:
-      "Reconocimiento de ideas asociadas a la responsabilidad personal y la iniciativa.",
-    dimensions: [
-      "Iniciativa ante dificultades académicas",
-      "Responsabilidad sobre errores de planificación",
-      "Valor atribuido a la constancia",
-    ],
+      "Percepción del descanso y su relación declarada con el rendimiento académico.",
+    dimensions: ["Horas de descanso", "Dificultad para descansar la mente"],
   },
 ];
 
@@ -75,7 +54,7 @@ export type MethodologyStage = {
   number: string;
   title: string;
   status: string;
-  statusTone: "documented" | "pending" | "prepared";
+  statusTone: "documented";
   items: string[];
 };
 
@@ -88,68 +67,44 @@ export const METHODOLOGY: MethodologyStage[] = [
     items: [
       "Definición de los objetivos de la investigación.",
       "Identificación de la muestra objetivo: diez estudiantes del DCyT.",
-      "Preparación de las dimensiones del cuestionario.",
-      "Selección del método de distribución: código QR y enlace directo.",
-      "Preparación del espacio reservado para el código QR.",
+      "Diseño de las ocho preguntas del cuestionario.",
+      "Definición de los cuatro bloques temáticos.",
+      "Criterios de lectura y límites de interpretación.",
     ],
   },
   {
     number: "02",
     title: "Ejecución",
-    status: "Pendiente de respuestas",
-    statusTone: "pending",
+    status: "Completada",
+    statusTone: "documented",
     items: [
       "Presentación del cuestionario a los participantes.",
-      "Distribución entre estudiantes de la UCLA - DCyT.",
-      "Recolección de respuestas.",
-      "Organización de los datos recolectados.",
-      "Verificación de la validez de cada respuesta.",
+      "Aplicación del instrumento a diez estudiantes del DCyT.",
+      "Recolección y organización de las respuestas.",
+      "Conteo de las opciones por pregunta.",
+      "Revisión de la consistencia de cada distribución.",
     ],
   },
   {
     number: "03",
     title: "Transferencia al portafolio digital",
-    status: "Estructura preparada",
-    statusTone: "prepared",
+    status: "Resultados publicados",
+    statusTone: "documented",
     items: [
-      "Anonimización de la información cuando corresponda.",
-      "Agregación de respuestas por dimensión.",
-      "Interpretación de los resultados.",
+      "Agregación de respuestas sin datos identificables.",
+      "Agrupación de las ocho preguntas en cuatro temas.",
+      "Interpretación descriptiva de los resultados.",
       "Presentación visual con denominadores explícitos.",
-      "Redacción de conclusiones académicas.",
+      "Redacción de conclusiones limitadas por la muestra.",
     ],
   },
 ];
 
 export const RESULTS_CRITERIA = [
-  "Publicar únicamente respuestas que hayan sido verificadas y contabilizadas.",
+  "Publicar únicamente respuestas registradas y contabilizadas.",
   "Indicar siempre el número de respuestas válidas detrás de cada porcentaje.",
   "No atribuir nombres, correos ni respuestas individuales identificables.",
   "Distinguir con claridad los hallazgos de las expectativas previas del equipo.",
-] as const;
-
-export const PLANNED_CHARTS = [
-  {
-    id: "habitos",
-    title: "Distribución de hábitos de estudio",
-    description:
-      "Frecuencia semanal y duración de las sesiones de estudio reportadas por la muestra.",
-    unit: "Respuestas por categoría",
-  },
-  {
-    id: "telefono",
-    title: "Uso del teléfono durante el estudio",
-    description:
-      "Frecuencia de revisión del dispositivo y motivo principal de interrupción.",
-    unit: "Respuestas por categoría",
-  },
-  {
-    id: "constancia",
-    title: "Constancia percibida",
-    description:
-      "Continuidad entre sesiones y uso de herramientas de planificación académica.",
-    unit: "Respuestas por categoría",
-  },
 ] as const;
 
 export type CompetencyStatus = "desarrollo" | "aplicado" | "consolidado" | "por-desarrollar";
@@ -181,7 +136,7 @@ export const COMPETENCIES: CompetencyGroup[] = [
       { name: "Diseño responsivo", status: "aplicado", note: "Verificación entre 320 px y 1920 px." },
       { name: "Integración de medios digitales", status: "desarrollo", note: "El espacio del video está listo; falta el material final." },
       { name: "Accesibilidad web", status: "aplicado", note: "Semántica, teclado, foco visible y movimiento reducido." },
-      { name: "Presentación de datos", status: "desarrollo", note: "La estructura existe; faltan respuestas verificadas." },
+      { name: "Presentación de datos", status: "aplicado", note: "Gráficos descriptivos con denominadores explícitos (n = 10)." },
     ],
   },
   {
@@ -191,8 +146,8 @@ export const COMPETENCIES: CompetencyGroup[] = [
     items: [
       { name: "Producción de video", status: "por-desarrollar", note: "El reel del equipo aún no está editado." },
       { name: "Escritura académica", status: "desarrollo", note: "Síntesis de fuentes en revisión editorial." },
-      { name: "Documentación de investigación", status: "desarrollo", note: "Metodología documentada; resultados pendientes." },
-      { name: "Diseño de encuestas", status: "desarrollo", note: "Dimensiones definidas, instrumento por validar." },
+      { name: "Documentación de investigación", status: "aplicado", note: "Metodología y resultados descriptivos publicados." },
+      { name: "Diseño de encuestas", status: "aplicado", note: "Instrumento de ocho preguntas aplicado a diez estudiantes." },
       { name: "Presentación de información", status: "aplicado", note: "Jerarquía editorial y etiquetas técnicas." },
       { name: "Comunicación técnica", status: "desarrollo", note: "Documentación del sistema de diseño en curso." },
       { name: "Trabajo colaborativo", status: "desarrollo", note: "Roles y aportes en consolidación." },
