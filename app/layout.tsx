@@ -3,6 +3,7 @@ import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
+import { RevealFallback } from "@/components/layout/reveal-fallback";
 import { SITE } from "@/lib/content/site";
 import "./globals.css";
 
@@ -98,6 +99,7 @@ export default function RootLayout({
           Saltar al contenido
         </a>
         <ScrollProgress />
+        <RevealFallback />
         <SiteHeader />
         <main id="contenido">{children}</main>
         <SiteFooter />

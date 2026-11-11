@@ -4,6 +4,11 @@ export type ProfileSection = {
   items?: string[];
 };
 
+export type ProfileFacts = {
+  label: string;
+  items: string[];
+};
+
 export type TeamAccent = "crimson" | "gold" | "blue";
 
 export type TeamMember = {
@@ -17,8 +22,12 @@ export type TeamMember = {
   bio: string;
   tags: string[];
   accent: TeamAccent;
+  validated: boolean;
+  facts?: ProfileFacts[];
   profile?: ProfileSection[];
 };
+
+export const VALIDATION_NOTICE = "Información en proceso de validación";
 
 const STUDENT_ROLE = "Estudiante de Ingeniería en Informática · UCLA - DCyT";
 
@@ -34,6 +43,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Su ficha se publicará cuando el equipo cierre la versión verificada de su perfil. Preferimos un espacio en preparación antes que una biografía inventada.",
     tags: ["Ingeniería en Informática", "UCLA - DCyT"],
     accent: "crimson",
+    validated: false,
   },
   {
     id: "zadkiel-boza",
@@ -43,9 +53,17 @@ export const TEAM_MEMBERS: TeamMember[] = [
     kicker: "Capas y transparencia",
     role: STUDENT_ROLE,
     badge: "Integrante del equipo",
-    bio: "La ficha permanece abierta a la información que su autor confirme. Este portafolio no atribuye logros, especialidades ni experiencia sin respaldo.",
-    tags: ["Ingeniería en Informática", "UCLA - DCyT"],
+    bio: "Dibujante y estudiante de Ingeniería en Informática. En esta etapa está aprendiendo desarrollo de videojuegos y animación y modelado 3D: el portafolio registra esa formación en curso, sin atribuirle especialidades ya ejercidas.",
+    tags: ["Dibujo", "Desarrollo de videojuegos", "Animación y modelado 3D"],
     accent: "blue",
+    validated: false,
+    facts: [
+      { label: "Actividad actual", items: ["Dibujante"] },
+      {
+        label: "Aprendiendo",
+        items: ["Desarrollo de videojuegos", "Animación y modelado 3D"],
+      },
+    ],
   },
   {
     id: "gino-martinez",
@@ -58,6 +76,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Especialización en desarrollo web full-stack. Su trabajo se concentra en la arquitectura de componentes, los sistemas de interfaz y la construcción de experiencias web con Next.js y TypeScript.",
     tags: ["Next.js", "TypeScript", "UI/UX systems"],
     accent: "gold",
+    validated: true,
     profile: [
       {
         title: "Perfil",
@@ -103,6 +122,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Enfocado en la lógica de sistemas y desarrollo de software. Comprometido con la resolución de problemas y el trabajo en equipo.",
     tags: ["Lógica de Programación", "Trabajo en Equipo", "Análisis"],
     accent: "blue",
+    validated: false,
   },
   {
     id: "francisco-placeres",
@@ -115,6 +135,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Apasionado por la tecnología y la optimización de procesos académicos. Orientado al aprendizaje continuo y la autogestión.",
     tags: ["Desarrollo Web", "Investigación", "Autogestión"],
     accent: "gold",
+    validated: false,
   },
   {
     id: "juan-rodriguez",
@@ -127,5 +148,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Dedicado al análisis de datos y estructura de proyectos. Enfocado en la eficiencia de hábitos de estudio y colaboración.",
     tags: ["Estructura de Datos", "Colaboración", "Planificación"],
     accent: "crimson",
+    validated: false,
   },
 ];

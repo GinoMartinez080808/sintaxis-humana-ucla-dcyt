@@ -112,69 +112,67 @@ export function HabitsSection() {
           lead="Antes de investigar los hábitos de otros, revisamos lo que tres autores proponen sobre la conducta humana. No los presentamos como recetas equivalentes: cada uno ilumina una parte distinta del problema."
         />
 
-        <div className="media-layout reveal">
-          <div className="media-frame">
+        <div className="media-layout media-layout--reel reveal">
+          <div className="reel-stage">
             <div className="media-frame__grid" aria-hidden="true" />
             <span className="media-frame__corner media-frame__corner--tl" aria-hidden="true">
               Reel · 01
             </span>
             <span className="media-frame__corner media-frame__corner--br" aria-hidden="true">
-              16:9
+              9:16 · Vertical
             </span>
-            <div className="media-frame__content">
-              <span className="media-frame__glyph" aria-hidden="true">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="2.5" y="6" width="13" height="12" rx="2.5" />
-                  <path d="M15.5 10.6 21.5 7.2v9.6l-6-3.4" />
-                </svg>
-              </span>
-              <p className="media-frame__state">En preparación</p>
-              <p className="media-frame__title">Reel sobre nuestros hábitos</p>
-              <p className="media-frame__note">
-                El video se publicará cuando el equipo cierre su edición. La
-                proporción 16:9 y el espacio accesible ya están reservados: no
-                mostramos un reproductor vacío ni un enlace inventado.
-              </p>
+            <div className="reel-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/aOxGRmA8JJg"
+                title="Reel de Lenguaje y Comunicación — equipo Sintaxis Humana"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
           </div>
 
           <div className="media-aside">
             <div>
-              <h3>Por qué el video no está aquí todavía</h3>
+              <h3>El reel del equipo</h3>
               <p>
-                Un portafolio también comunica lo que aún no existe. Preferimos
-                declarar el estado real del material antes que simular un
-                contenido terminado.
+                La pieza audiovisual del portafolio ya está publicada: nuestro
+                reel de Lenguaje y Comunicación, grabado en formato vertical
+                para verse completo desde el teléfono.
               </p>
             </div>
             <div>
-              <h3>Mientras tanto</h3>
+              <h3>También en YouTube</h3>
               <p>
-                Las tres fichas de lectura que aparecen a continuación ya están
-                disponibles y sostienen la parte teórica del portafolio.
+                Se reproduce aquí mismo, sin salir del portafolio. Si prefieres
+                verlo en la plataforma o compartirlo, está disponible en
+                YouTube.
               </p>
+              <a
+                className="button button--ghost media-aside__link"
+                href="https://youtu.be/aOxGRmA8JJg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver en YouTube
+                <span className="button__arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
             </div>
             <div className="media-aside__meta">
               <div className="media-aside__row">
                 <span>Formato</span>
-                <strong>16:9</strong>
+                <strong>9:16 vertical</strong>
               </div>
               <div className="media-aside__row">
                 <span>Estado</span>
-                <strong>En edición</strong>
+                <strong>Publicado</strong>
               </div>
               <div className="media-aside__row">
-                <span>Publicación</span>
-                <strong>Pendiente</strong>
+                <span>Plataforma</span>
+                <strong>YouTube</strong>
               </div>
             </div>
           </div>

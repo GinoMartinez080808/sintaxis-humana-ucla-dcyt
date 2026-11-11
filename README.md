@@ -102,10 +102,13 @@ el sitio no generaliza sus hallazgos a toda la UCLA. El código QR de acceso abr
 el formulario original «Hábitos y Principios» en Google Forms; el informe analiza
 ocho de sus nueve preguntas.
 
+El reel de Lenguaje y Comunicación está publicado: se reproduce en la sección 03
+mediante un iframe vertical (9:16) de YouTube con carga diferida, y los objetivos
+de la entrega se presentan como cumplidos en la sección 06.
+
 Pendiente de material externo o de etapas posteriores:
 
 - Ampliar la muestra para comparar los patrones con otros grupos y carreras.
-- Reel del equipo sobre hábitos.
 - Perfiles verificados de Maikol Márquez y Zadkiel Boza.
 - Dominio final del sitio.
 

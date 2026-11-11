@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { TEAM_MEMBERS } from "../lib/content/team.ts";
+import { TEAM_MEMBERS, VALIDATION_NOTICE } from "../lib/content/team.ts";
 
 const EXPECTED_MEMBERS = [
   ["maikol-marquez", "Maikol Márquez", "MM"],
@@ -75,4 +75,35 @@ test("solo el perfil verificado expone una ficha ampliada", () => {
   );
 
   assert.deepEqual(withProfile, ["gino-martinez"]);
+});
+
+test("solo Gino Martínez tiene información validada", () => {
+  const validated = TEAM_MEMBERS.filter((member) => member.validated).map(
+    (member) => member.id,
+  );
+
+  assert.deepEqual(validated, ["gino-martinez"]);
+});
+
+test("el aviso de validación está definido para las fichas pendientes", () => {
+  assert.equal(VALIDATION_NOTICE, "Información en proceso de validación");
+
+  const pending = TEAM_MEMBERS.filter((member) => !member.validated);
+  assert.equal(pending.length, 5);
+});
+
+test("la ficha de Zadkiel declara su actividad y sus aprendizajes en curso", () => {
+  const zadkiel = TEAM_MEMBERS.find((member) => member.id === "zadkiel-boza");
+
+  assert.ok(zadkiel, "Zadkiel Boza debe existir en el equipo");
+  assert.ok(zadkiel.facts, "Zadkiel debe declarar datos de perfil");
+
+  const activity = zadkiel.facts.find((fact) => fact.label === "Actividad actual");
+  assert.deepEqual(activity?.items, ["Dibujante"]);
+
+  const learning = zadkiel.facts.find((fact) => fact.label === "Aprendiendo");
+  assert.deepEqual(learning?.items, [
+    "Desarrollo de videojuegos",
+    "Animación y modelado 3D",
+  ]);
 });

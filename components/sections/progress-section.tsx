@@ -6,6 +6,7 @@ import {
   LINKAGES,
   type CompetencyStatus,
 } from "@/lib/content/research";
+import { NEXT_ITERATIONS, OBJECTIVES } from "@/lib/content/objectives";
 
 const STATUS_LABELS: Record<CompetencyStatus, string> = {
   "por-desarrollar": "Por desarrollar",
@@ -13,25 +14,6 @@ const STATUS_LABELS: Record<CompetencyStatus, string> = {
   aplicado: "Aplicado",
   consolidado: "Consolidado",
 };
-
-const NEXT_STEPS = [
-  {
-    tag: "Video",
-    text: "Editar y publicar el reel del equipo, con subtítulos y una descripción accesible.",
-  },
-  {
-    tag: "Encuesta",
-    text: "Ampliar la muestra para comparar los patrones descriptivos con otros grupos y carreras.",
-  },
-  {
-    tag: "Perfiles",
-    text: "Incorporar las biografías verificadas de Maikol y Zadkiel cuando sus autores las confirmen.",
-  },
-  {
-    tag: "Dominio",
-    text: "Definir el dominio final del sitio y la URL canónica para los metadatos.",
-  },
-];
 
 export function ProgressSection() {
   return (
@@ -46,7 +28,7 @@ export function ProgressSection() {
               De la intención al <em>sistema</em>.
             </>
           }
-          lead="Este apartado no mide cuánto sabemos con una nota. Registra qué cambió entre el punto de partida y este punto intermedio, con evidencia y con límites explícitos."
+          lead="Este apartado no mide cuánto sabemos con una nota. Registra qué cambió entre el punto de partida y la entrega actual, con evidencia y con límites explícitos."
         />
 
         <div className="progress-blocks">
@@ -88,17 +70,19 @@ export function ProgressSection() {
           </article>
 
           <article className="progress-block reveal">
-            <span className="progress-block__label">Lo que falta</span>
-            <h3>Lo que no se puede simular</h3>
+            <span className="progress-block__label">Lo que sigue</span>
+            <h3>Verificar y ampliar</h3>
             <p>
-              Falta el material que depende de terceros y de etapas posteriores:
-              el video del equipo y los perfiles de Maikol y Zadkiel. También
-              falta ampliar la muestra de la encuesta y definir el dominio final.
+              Los objetivos de esta entrega están cumplidos: el reel está
+              publicado, la encuesta tiene sus resultados en línea y las fichas
+              de lectura sostienen la parte teórica. Lo que queda son
+              ampliaciones: una muestra mayor, los perfiles que sus autores aún
+              validan y el dominio final.
             </p>
             <p>
-              Ninguno de esos vacíos se disimula en esta versión. El siguiente
-              paso no es agregar más secciones, sino completar y verificar lo que
-              ya está declarado.
+              Ninguno de esos pasos se simula en esta versión. El apartado queda
+              listo para registrarlos cuando ocurran, sin rehacer lo que ya está
+              publicado.
             </p>
           </article>
         </div>
@@ -271,18 +255,57 @@ export function ProgressSection() {
           </div>
         </div>
 
+        <div className="objectives reveal">
+          <div className="objectives__head">
+            <p className="eyebrow">Estado del proyecto</p>
+            <h3>Objetivos cumplidos</h3>
+            <p>
+              Los objetivos planteados para esta entrega están completos y cada
+              uno tiene su evidencia en las secciones anteriores.
+            </p>
+          </div>
+          <ul className="objective-list">
+            {OBJECTIVES.map((objective) => (
+              <li className="objective-item" key={objective.id}>
+                <span className="objective-item__check" aria-hidden="true">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4.5 12.5 10 18 19.5 7" />
+                  </svg>
+                </span>
+                <div className="objective-item__body">
+                  <p className="objective-item__tag">{objective.tag}</p>
+                  <h4>{objective.title}</h4>
+                  <p>{objective.description}</p>
+                </div>
+                <span className="status-chip status-chip--cumplido">
+                  <span className="status-chip__dot" aria-hidden="true" />
+                  Cumplido
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className="next-iteration reveal">
           <div>
-            <p className="eyebrow">Estado del proyecto</p>
-            <h3>Siguiente iteración</h3>
+            <p className="eyebrow">Próximas iteraciones</p>
+            <h3>Lo que viene después</h3>
             <p>
-              Lo que falta depende de material externo y de etapas que aún no se
-              ejecutan. Preferimos dejar el estado visible antes que completarlo
-              con supuestos.
+              Estas ampliaciones no bloquean la entrega actual: quedan
+              declaradas para registrarse cuando se ejecuten.
             </p>
           </div>
           <ul className="next-list">
-            {NEXT_STEPS.map((step) => (
+            {NEXT_ITERATIONS.map((step) => (
               <li key={step.tag}>
                 <span>{step.tag}</span>
                 {step.text}
