@@ -18,6 +18,12 @@ const THEME_IDS: readonly SurveyThemeId[] = [
 
 const THEME_ID_SET = new Set<string>(THEME_IDS);
 
+export const SURVEY_FORM_TITLE = "Hábitos y Principios";
+export const SURVEY_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdzkhDwsCXzJLBydLrIEhDJsDBBXsxM8BjVRkphrTTCzconcA/viewform";
+// El formulario público incluye una pregunta de tensión fuera del conjunto analizado.
+export const SURVEY_FORM_TOTAL_QUESTIONS = 9;
+
 export type SurveyQuestion = {
   id: string;
   category: string;

@@ -1,9 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 
 import {
   SURVEY_DATA,
   SURVEY_THEMES,
+  SURVEY_FORM_TITLE,
+  SURVEY_FORM_URL,
+  SURVEY_FORM_TOTAL_QUESTIONS,
   getPercentage,
   formatPercent,
   getTopOption,
@@ -179,4 +183,23 @@ test("la conclusión separa los denominadores de Q4, Q6 y Q7", () => {
   assert.match(summary, /seis de diez prefieren estudiar en soledad/);
   assert.match(summary, /siete de diez dicen escuchar/);
   assert.doesNotMatch(summary, /una parte reconoce dificultad.*prefiere/i);
+});
+
+test("el acceso apunta al cuestionario verificado", () => {
+  assert.equal(SURVEY_FORM_TITLE, "Hábitos y Principios");
+  assert.equal(SURVEY_FORM_TOTAL_QUESTIONS, 9);
+  assert.equal(
+    SURVEY_FORM_URL,
+    "https://docs.google.com/forms/d/e/1FAIpQLSdzkhDwsCXzJLBydLrIEhDJsDBBXsxM8BjVRkphrTTCzconcA/viewform",
+  );
+});
+
+test("el QR existe, conserva su resolución y no depende de recursos externos", () => {
+  const svg = readFileSync(
+    new URL("../public/images/qr-encuesta.svg", import.meta.url),
+    "utf8",
+  );
+  assert.match(svg, /viewBox="0 0 1024 1024"/);
+  assert.match(svg, /data:image\/webp;base64,/);
+  assert.doesNotMatch(svg, /href="https?:\/\//);
 });

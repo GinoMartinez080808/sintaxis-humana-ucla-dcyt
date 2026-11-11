@@ -2223,53 +2223,53 @@ table {
   letter-spacing: -0.02em;
 }
 
-.fieldwork-access__count {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  padding-block: 0.4rem 0.9rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.fieldwork-access__count strong {
-  font-family: var(--font-display);
-  font-size: 3.2rem;
-  font-weight: 400;
-  line-height: 0.85;
-  color: var(--gold-soft);
-}
-
-.fieldwork-access__count span {
-  font-family: var(--font-mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.fieldwork-access__facts {
+.survey-qr {
   display: grid;
-  gap: 0.45rem;
+  justify-items: center;
+  gap: 0.65rem;
+  margin-block: 0.15rem;
 }
 
-.fieldwork-access__facts > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.78rem;
+.survey-qr__frame {
+  width: min(100%, 230px);
+  padding: 0.55rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgb(232 182 75 / 0.42),
+    0 22px 46px -24px rgb(0 0 0 / 0.95);
 }
 
-.fieldwork-access__facts dt {
+.survey-qr__frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.survey-qr__caption {
+  display: grid;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.survey-qr__caption strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.survey-qr__caption span {
   font-family: var(--font-mono);
-  font-size: 0.54rem;
+  font-size: 0.5rem;
   letter-spacing: 0.1em;
+  line-height: 1.6;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 
-.fieldwork-access__facts dd {
-  color: var(--text-primary);
-  text-align: right;
+.fieldwork-access .button {
+  margin-top: 0.15rem;
 }
 
 .fieldwork-access__note {

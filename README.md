@@ -98,7 +98,9 @@ Las fuentes revisadas son:
 
 La encuesta de campo se aplicó a diez estudiantes y sus resultados descriptivos
 están publicados con denominadores explícitos. La muestra no es probabilística:
-el sitio no generaliza sus hallazgos a toda la UCLA.
+el sitio no generaliza sus hallazgos a toda la UCLA. El código QR de acceso abre
+el formulario original «Hábitos y Principios» en Google Forms; el informe analiza
+ocho de sus nueve preguntas.
 
 Pendiente de material externo o de etapas posteriores:
 

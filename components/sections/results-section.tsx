@@ -35,7 +35,7 @@ export function ResultsSection() {
               Lo que estos resultados <em>no pueden afirmar</em>.
             </>
           }
-          lead={`La encuesta reúne ${SURVEY_TOTAL_RESPONSES} respuestas en ${SURVEY_QUESTION_COUNT} preguntas. Los datos se presentan por tema en la sección anterior; aquí quedan explícitos los criterios de lectura, el registro de cada pregunta y los límites del estudio.`}
+          lead={`La encuesta reúne ${SURVEY_TOTAL_RESPONSES} respuestas en ${SURVEY_QUESTION_COUNT} preguntas analizadas. Los datos se presentan por tema en la sección anterior; aquí quedan explícitos los criterios de lectura, el registro de cada pregunta y los límites del estudio.`}
         />
 
         <div className="sample-banner reveal">
@@ -45,10 +45,10 @@ export function ResultsSection() {
           <div>
             <h3>Respuestas registradas</h3>
             <p>
-              Cada una de las {SURVEY_QUESTION_COUNT} preguntas registra{" "}
-              {SURVEY_TOTAL_RESPONSES} respuestas. Cada porcentaje se calcula
-              sobre su propio denominador; no hay respuestas agregadas entre
-              preguntas.
+              Cada una de las {SURVEY_QUESTION_COUNT} preguntas analizadas
+              registra {SURVEY_TOTAL_RESPONSES} respuestas. Cada porcentaje se
+              calcula sobre su propio denominador; no hay respuestas agregadas
+              entre preguntas.
             </p>
             <span className="sample-banner__meta">
               n = {SURVEY_TOTAL_RESPONSES} · {SURVEY_QUESTION_COUNT} preguntas ·
@@ -80,7 +80,7 @@ export function ResultsSection() {
         <div className="compare-wrap reveal">
           <table className="compare">
             <caption className="sr-only">
-              Registro de las ocho preguntas aplicadas, su tema y su número de
+              Registro de las ocho preguntas analizadas, su tema y su número de
               respuestas
             </caption>
             <thead>
@@ -107,9 +107,9 @@ export function ResultsSection() {
             </tbody>
           </table>
           <p className="compare__note">
-            Cada pregunta registra {SURVEY_TOTAL_RESPONSES} respuestas. Los
-            porcentajes se calculan sobre ese denominador; no se agregan
-            respuestas entre preguntas.
+            Cada una de las ocho preguntas analizadas registra{" "}
+            {SURVEY_TOTAL_RESPONSES} respuestas. Los porcentajes se calculan
+            sobre ese denominador; no se agregan respuestas entre preguntas.
           </p>
         </div>
 

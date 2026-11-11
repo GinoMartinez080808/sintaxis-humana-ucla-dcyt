@@ -95,7 +95,7 @@ export function ResearchSection() {
               <em>autogestión académica</em>.
             </>
           }
-          lead={`Exploramos cómo los estudiantes organizan su tiempo, enfrentan las distracciones, comparten el aprendizaje y gestionan su descanso. Presentamos los resultados de un cuestionario de ${SURVEY_QUESTION_COUNT} preguntas aplicado a ${SURVEY_TOTAL_RESPONSES} estudiantes de Ingeniería en Informática del DCyT.`}
+          lead={`Exploramos cómo los estudiantes organizan su tiempo, enfrentan las distracciones, comparten el aprendizaje y gestionan su descanso. Presentamos los resultados de ${SURVEY_QUESTION_COUNT} preguntas de un cuestionario aplicado a ${SURVEY_TOTAL_RESPONSES} estudiantes de Ingeniería en Informática del DCyT.`}
         />
 
         <div className="fieldwork-brief reveal">
@@ -115,8 +115,8 @@ export function ResearchSection() {
               <div>
                 <dt>Instrumento</dt>
                 <dd>
-                  {SURVEY_QUESTION_COUNT} preguntas de selección única,
-                  agrupadas en cuatro temas.
+                  {SURVEY_QUESTION_COUNT} preguntas analizadas de selección
+                  única, agrupadas en cuatro temas.
                 </dd>
               </div>
               <div>

@@ -175,12 +175,13 @@ export function ResearchAnnexes({
         tabIndex={0}
         hidden={active !== "b"}
       >
-        <p className="annex-subtitle">Anexo B · Instrumento aplicado</p>
+        <p className="annex-subtitle">Anexo B · Instrumento analizado</p>
         <p className="annex-lede">
-          El cuestionario aplicado consta de {questionCount} preguntas de
-          selección única, agrupadas en cuatro bloques temáticos. Cada pregunta
-          se analiza con su propio denominador de {totalResponses} respuestas;
-          el registro literal está en la sección de resultados.
+          Este informe analiza {questionCount} preguntas de selección única del
+          cuestionario aplicado, agrupadas en cuatro bloques temáticos. Cada
+          pregunta se analiza con su propio denominador de {totalResponses}{" "}
+          respuestas. El formulario original incluye además una pregunta sobre
+          tensión académica que no forma parte de este conjunto.
         </p>
 
         <div className="instrument-grid" style={{ marginTop: "1.25rem" }}>
@@ -188,7 +189,7 @@ export function ResearchAnnexes({
             <article className="instrument-card" key={block.code}>
               <div className="instrument-card__head">
                 <span className="instrument-card__code">{block.code}</span>
-                <span className="pill pill--documented">Aplicado</span>
+                <span className="pill pill--documented">Analizado</span>
               </div>
               <h4>{block.title}</h4>
               <p>{block.description}</p>
@@ -206,10 +207,10 @@ export function ResearchAnnexes({
             !
           </span>
           <div>
-            <strong>Instrumento aplicado</strong>
+            <strong>Instrumento analizado</strong>
             Las preguntas de este anexo son las que sustentan los resultados de
-            la sección de investigación. No se presentan preguntas como
-            aplicadas si no lo fueron.
+            la sección de investigación. La pregunta adicional del formulario no
+            se incluye en este informe.
           </div>
         </div>
       </div>
@@ -259,10 +260,10 @@ export function ResearchAnnexes({
           <div className="prose">
             <p className="annex-subtitle">Anexo D · Resultados y hallazgos</p>
             <p>
-              La encuesta registra {totalResponses} respuestas para cada una de
-              las {questionCount} preguntas. Los resultados se presentan por
-              tema en la sección de investigación de campo, con porcentajes y
-              denominadores explícitos.
+              El conjunto analizado registra {totalResponses} respuestas para
+              cada una de las {questionCount} preguntas. Los resultados se
+              presentan por tema en la sección de investigación de campo, con
+              porcentajes y denominadores explícitos.
             </p>
             <p>
               Este anexo conserva los criterios de publicación; el registro

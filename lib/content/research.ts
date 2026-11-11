@@ -67,7 +67,7 @@ export const METHODOLOGY: MethodologyStage[] = [
     items: [
       "Definición de los objetivos de la investigación.",
       "Identificación de la muestra objetivo: diez estudiantes del DCyT.",
-      "Diseño de las ocho preguntas del cuestionario.",
+      "Diseño del cuestionario de campo.",
       "Definición de los cuatro bloques temáticos.",
       "Criterios de lectura y límites de interpretación.",
     ],
@@ -92,7 +92,7 @@ export const METHODOLOGY: MethodologyStage[] = [
     statusTone: "documented",
     items: [
       "Agregación de respuestas sin datos identificables.",
-      "Agrupación de las ocho preguntas en cuatro temas.",
+      "Agrupación de las ocho preguntas analizadas en cuatro temas.",
       "Interpretación descriptiva de los resultados.",
       "Presentación visual con denominadores explícitos.",
       "Redacción de conclusiones limitadas por la muestra.",
@@ -147,7 +147,7 @@ export const COMPETENCIES: CompetencyGroup[] = [
       { name: "Producción de video", status: "por-desarrollar", note: "El reel del equipo aún no está editado." },
       { name: "Escritura académica", status: "desarrollo", note: "Síntesis de fuentes en revisión editorial." },
       { name: "Documentación de investigación", status: "aplicado", note: "Metodología y resultados descriptivos publicados." },
-      { name: "Diseño de encuestas", status: "aplicado", note: "Instrumento de ocho preguntas aplicado a diez estudiantes." },
+      { name: "Diseño de encuestas", status: "aplicado", note: "Informe descriptivo de ocho preguntas con diez respuestas registradas." },
       { name: "Presentación de información", status: "aplicado", note: "Jerarquía editorial y etiquetas técnicas." },
       { name: "Comunicación técnica", status: "desarrollo", note: "Documentación del sistema de diseño en curso." },
       { name: "Trabajo colaborativo", status: "desarrollo", note: "Roles y aportes en consolidación." },
