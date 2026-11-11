@@ -10,7 +10,7 @@ export const SITE = {
   location: "Barquisimeto, Lara, Venezuela",
   year: "2026",
   description:
-    "Portafolio académico de tres estudiantes de Ingeniería en Informática de la UCLA - DCyT: revisión de la literatura sobre hábitos, investigación de campo y registro honesto del proceso de aprendizaje.",
+    "Portafolio académico de seis estudiantes de Ingeniería en Informática de la UCLA - DCyT: revisión de la literatura sobre hábitos, investigación de campo y registro honesto del proceso de aprendizaje.",
 } as const;
 
 export type NavItem = {

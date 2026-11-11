@@ -26,7 +26,7 @@ export function SiteFooter() {
             </div>
             <p>
               Revisión de la literatura sobre hábitos, investigación de campo y
-              registro del proceso de aprendizaje de tres estudiantes de
+              registro del proceso de aprendizaje de seis estudiantes de
               Ingeniería en Informática de la UCLA - DCyT.
             </p>
           </div>

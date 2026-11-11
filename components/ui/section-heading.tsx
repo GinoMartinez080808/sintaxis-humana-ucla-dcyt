@@ -16,7 +16,7 @@ export function SectionHeading({
   id,
 }: SectionHeadingProps) {
   return (
-    <header className="section-heading reveal">
+    <header className="section-heading">
       <div className="section-heading__meta">
         <span className="section-heading__index">{index}</span>
         <span className="section-heading__rule" aria-hidden="true" />

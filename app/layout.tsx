@@ -35,9 +35,12 @@ export const metadata: Metadata = {
   description: SITE.description,
   applicationName: SITE.name,
   authors: [
-    { name: "Maikol Marquez" },
+    { name: "Maikol Márquez" },
     { name: "Zadkiel Boza" },
-    { name: "Gino Martinez" },
+    { name: "Gino Martínez" },
+    { name: "Jesús Torres" },
+    { name: "Francisco Placeres" },
+    { name: "Juan Rodríguez" },
   ],
   keywords: [
     "UCLA",

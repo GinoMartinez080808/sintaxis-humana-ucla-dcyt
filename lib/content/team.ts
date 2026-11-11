@@ -4,60 +4,60 @@ export type ProfileSection = {
   items?: string[];
 };
 
+export type TeamAccent = "crimson" | "gold" | "blue";
+
 export type TeamMember = {
   id: string;
   index: string;
   name: string;
-  initial: string;
+  initials: string;
   kicker: string;
   role: string;
-  status: "disponible" | "proximamente";
-  statusLabel: string;
-  note: string;
+  badge: string;
+  bio: string;
   tags: string[];
-  variant: "brutalist" | "glass" | "spotlight";
+  accent: TeamAccent;
   profile?: ProfileSection[];
 };
+
+const STUDENT_ROLE = "Estudiante de Ingeniería en Informática · UCLA - DCyT";
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "maikol-marquez",
     index: "01",
-    name: "Maikol Marquez",
-    initial: "M",
+    name: "Maikol Márquez",
+    initials: "MM",
     kicker: "Geometría y estructura",
-    role: "Estudiante de Ingeniería en Informática · UCLA - DCyT",
-    status: "proximamente",
-    statusLabel: "Próximamente",
-    note: "Su ficha se publicará cuando el equipo cierre la versión verificada de su perfil. Preferimos un espacio en preparación antes que una biografía inventada.",
+    role: STUDENT_ROLE,
+    badge: "Integrante del equipo",
+    bio: "Su ficha se publicará cuando el equipo cierre la versión verificada de su perfil. Preferimos un espacio en preparación antes que una biografía inventada.",
     tags: ["Ingeniería en Informática", "UCLA - DCyT"],
-    variant: "brutalist",
+    accent: "crimson",
   },
   {
     id: "zadkiel-boza",
     index: "02",
     name: "Zadkiel Boza",
-    initial: "Z",
+    initials: "ZB",
     kicker: "Capas y transparencia",
-    role: "Estudiante de Ingeniería en Informática · UCLA - DCyT",
-    status: "proximamente",
-    statusLabel: "Próximamente",
-    note: "La ficha permanece abierta a la información que su autor confirme. Este portafolio no atribuye logros, especialidades ni experiencia sin respaldo.",
+    role: STUDENT_ROLE,
+    badge: "Integrante del equipo",
+    bio: "La ficha permanece abierta a la información que su autor confirme. Este portafolio no atribuye logros, especialidades ni experiencia sin respaldo.",
     tags: ["Ingeniería en Informática", "UCLA - DCyT"],
-    variant: "glass",
+    accent: "blue",
   },
   {
     id: "gino-martinez",
     index: "03",
-    name: "Gino Martinez",
-    initial: "G",
+    name: "Gino Martínez",
+    initials: "GM",
     kicker: "Desarrollo full-stack",
-    role: "Estudiante de Ingeniería en Informática · UCLA - DCyT",
-    status: "disponible",
-    statusLabel: "Perfil disponible",
-    note: "Especialización en desarrollo web full-stack. Su trabajo se concentra en la arquitectura de componentes, los sistemas de interfaz y la construcción de experiencias web con Next.js y TypeScript.",
+    role: STUDENT_ROLE,
+    badge: "Desarrollador full-stack",
+    bio: "Especialización en desarrollo web full-stack. Su trabajo se concentra en la arquitectura de componentes, los sistemas de interfaz y la construcción de experiencias web con Next.js y TypeScript.",
     tags: ["Next.js", "TypeScript", "UI/UX systems"],
-    variant: "spotlight",
+    accent: "gold",
     profile: [
       {
         title: "Perfil",
@@ -91,5 +91,41 @@ export const TEAM_MEMBERS: TeamMember[] = [
         body: "Consolidar una práctica full-stack rigurosa, participar en proyectos colaborativos y seguir estudiando las decisiones de arquitectura que hacen sostenible un producto. Este portafolio es, en sí mismo, un ejercicio de ese proceso.",
       },
     ],
+  },
+  {
+    id: "jesus-torres",
+    index: "04",
+    name: "Jesús Torres",
+    initials: "JT",
+    kicker: "Lógica de sistemas",
+    role: STUDENT_ROLE,
+    badge: "Co-Desarrollador",
+    bio: "Enfocado en la lógica de sistemas y desarrollo de software. Comprometido con la resolución de problemas y el trabajo en equipo.",
+    tags: ["Lógica de Programación", "Trabajo en Equipo", "Análisis"],
+    accent: "blue",
+  },
+  {
+    id: "francisco-placeres",
+    index: "05",
+    name: "Francisco Placeres",
+    initials: "FP",
+    kicker: "Optimización y aprendizaje",
+    role: STUDENT_ROLE,
+    badge: "Co-Desarrollador",
+    bio: "Apasionado por la tecnología y la optimización de procesos académicos. Orientado al aprendizaje continuo y la autogestión.",
+    tags: ["Desarrollo Web", "Investigación", "Autogestión"],
+    accent: "gold",
+  },
+  {
+    id: "juan-rodriguez",
+    index: "06",
+    name: "Juan Rodríguez",
+    initials: "JR",
+    kicker: "Datos y estructura",
+    role: STUDENT_ROLE,
+    badge: "Co-Desarrollador",
+    bio: "Dedicado al análisis de datos y estructura de proyectos. Enfocado en la eficiencia de hábitos de estudio y colaboración.",
+    tags: ["Estructura de Datos", "Colaboración", "Planificación"],
+    accent: "crimson",
   },
 ];

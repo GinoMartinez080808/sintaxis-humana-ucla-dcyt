@@ -1,6 +1,6 @@
 # Sintaxis Humana
 
-Portafolio académico de tres estudiantes de **Ingeniería en Informática** de la
+Portafolio académico de seis estudiantes de **Ingeniería en Informática** de la
 Universidad Centroccidental Lisandro Alvarado — **UCLA, Decanato de Ciencias y
 Tecnología (DCyT)**.
 
@@ -46,11 +46,12 @@ app/
 components/
   layout/           # encabezado, pie, progreso de lectura
   sections/         # hero, equipo, hábitos, investigación, resultados, avance
+  team/             # tarjetas del equipo y diálogo de perfil
   media/            # panel de acceso a la encuesta
   survey/           # gráficos y métricas del cuestionario
-  ui/               # encabezado de sección
+  ui/               # encabezado de sección y avatares
 lib/content/        # contenido tipado en español
-public/images/      # escudo institucional y Open Graph
+public/images/      # escudo institucional, Open Graph y fotos opcionales del equipo
 scripts/            # generación de activos con sharp
 tests/              # validación del conjunto de datos
 ```
@@ -72,8 +73,9 @@ Tokens principales en `app/globals.css`:
 
 - HTML semántico, un solo `h1` y jerarquía de encabezados por sección.
 - Enlace de salto al contenido y foco visible.
-- Navegación por teclado en el carrusel, las pestañas de anexos y el diálogo de
-  perfil (elemento `dialog` nativo).
+- Navegación por teclado en las pestañas de anexos y el diálogo de perfil
+  (elemento `dialog` nativo).
+- Avatares con iniciales como alternativa textual y descripción accesible.
 - Estados de competencia con texto además de color.
 - Respeto a `prefers-reduced-motion`; el contenido nunca depende de una
   animación para ser visible.
@@ -102,8 +104,13 @@ Pendiente de material externo o de etapas posteriores:
 
 - Ampliar la muestra para comparar los patrones con otros grupos y carreras.
 - Reel del equipo sobre hábitos.
-- Perfiles verificados de Maikol Marquez y Zadkiel Boza.
+- Perfiles verificados de Maikol Márquez y Zadkiel Boza.
 - Dominio final del sitio.
+
+Las fotografías del equipo son opcionales. Si se añade un archivo
+`public/images/team/<id>.webp` (por ejemplo `jesus-torres.webp`), el avatar lo
+detecta y lo muestra; mientras no exista, se conserva el marcador de iniciales
+con la etiqueta «Foto por cargar».
 
 ## Aviso
 

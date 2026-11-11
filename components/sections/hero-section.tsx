@@ -1,11 +1,22 @@
 import Image from "next/image";
 import { SITE } from "@/lib/content/site";
+import { TEAM_MEMBERS } from "@/lib/content/team";
+import { TEAM_PHOTOS } from "@/lib/content/team-photos";
+import { TeamAvatar } from "@/components/ui/team-avatar";
 
 const HERO_STATS = [
-  { value: "03", label: "Estudiantes" },
+  {
+    value: String(TEAM_MEMBERS.length).padStart(2, "0"),
+    label: "Integrantes",
+  },
   { value: "01", label: "Encuesta de campo" },
   { value: "03", label: "Referentes académicos" },
 ];
+
+const TEAM_NAME_LIST = new Intl.ListFormat("es-VE", {
+  style: "long",
+  type: "conjunction",
+}).format(TEAM_MEMBERS.map((member) => member.name.split(" ")[0]));
 
 export function HeroSection() {
   return (
@@ -47,7 +58,7 @@ export function HeroSection() {
               data-enter
               style={{ animationDelay: "340ms" }}
             >
-              Somos <strong>Maikol, Zadkiel y Gino</strong>, estudiantes de
+              Somos <strong>{TEAM_NAME_LIST}</strong>, estudiantes de
               Ingeniería en Informática en la Universidad Centroccidental
               Lisandro Alvarado. Este portafolio reúne nuestra revisión de la
               literatura sobre hábitos, una encuesta de campo aplicada en el
@@ -56,9 +67,33 @@ export function HeroSection() {
             </p>
 
             <div
+              className="hero__team"
+              data-enter
+              style={{ animationDelay: "390ms" }}
+            >
+              <ul className="avatar-group" aria-label="Integrantes del equipo">
+                {TEAM_MEMBERS.map((member) => (
+                  <li className="avatar-group__item" key={member.id}>
+                    <TeamAvatar
+                      member={member}
+                      photoSrc={TEAM_PHOTOS[member.id]}
+                      size="sm"
+                      decorative
+                    />
+                    <span className="sr-only">{member.name}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="hero__team-meta">
+                <strong>{TEAM_MEMBERS.length} integrantes</strong>
+                <span>Estudiantes de Ingeniería Informática · UCLA - DCyT</span>
+              </p>
+            </div>
+
+            <div
               className="hero__actions"
               data-enter
-              style={{ animationDelay: "400ms" }}
+              style={{ animationDelay: "460ms" }}
             >
               <a className="button button--primary" href="#equipo">
                 Recorrer el portafolio
@@ -74,7 +109,7 @@ export function HeroSection() {
             <ul
               className="hero__stats"
               data-enter
-              style={{ animationDelay: "470ms" }}
+              style={{ animationDelay: "530ms" }}
             >
               {HERO_STATS.map((stat) => (
                 <li className="hero__stat" key={stat.label}>
